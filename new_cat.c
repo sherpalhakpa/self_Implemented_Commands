@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-main(int argc,char*argv[])
+int main(int argc,char*argv[])
 {
 if(argc > 2)
 {
@@ -13,17 +13,12 @@ else if(argc == 2)
      FILE * fpointer;
      fpointer = fopen(argv[1],"r");
      char content[256];
-     
      while(!feof(fpointer)){
- 	fget(content,256,fpointer);
+ 	fgets(content,256,fpointer);
         puts(content);
      }
-     close(fpointer);
+     fclose(fpointer);
 }
-
-
-
-
 
 return 0;
 }
