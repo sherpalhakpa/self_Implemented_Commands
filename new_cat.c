@@ -6,19 +6,26 @@ int main(int argc,char*argv[])
 {
 if(argc > 2)
 {
-     fprintf(stderr, "allowed syntax is: ./new_cat [file.txt]\nfile.txt is optional\nno more than 1 argument accepted");
+     fprintf(stderr, "allowed syntax is: ./new_cat [file.txt]\nfile.txt is optional\nno more than 1 argument accepted\n");
+     exit(0);
 }
 else if(argc == 2)
 {
      FILE * fpointer;
-     fpointer = fopen(argv[1],"r");
      char content[256];
+     fpointer = fopen(argv[1],"r");
+     if(fpointer == NULL)
+     {
+      fprintf(stderr, "Cannot open file\n");
+      exit(0);
+     }
      while(!feof(fpointer)){
- 	fgets(content,256,fpointer);
-        puts(content);
+        fgets(content, 256, fpointer);
+        printf("%s", content);
      }
      fclose(fpointer);
 }
+
 
 return 0;
 }
