@@ -17,7 +17,6 @@ if(argc > 3)
 else if(argc == 2)
 {
      FILE * fpointer;
-     char content[MAX_CHAR]; //for storing content
      fpointer = fopen(argv[1],"r"); //open file passed
      if(fpointer == NULL)//couldn't open file
      {
@@ -28,8 +27,6 @@ else if(argc == 2)
      int wordCount = 0;
      int lineCount = 0;
      char ch;
-     FILE *filepointer;
-     filepointer = fopen(argv[1],"r");
      while((ch=fgetc(fpointer))!=EOF)
      {
      characterCount++;
@@ -113,7 +110,6 @@ else if(argc == 3)
 }
 else if(argc ==1) //no arguments after ./new_cat
 {
-     char * content[MAX_CHAR]; //for storing content
      int characterCount = 0;
      int wordCount = 0;
      int lineCount = 0;
