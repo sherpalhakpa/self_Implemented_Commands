@@ -44,7 +44,7 @@ else if(argc == 2)
      }
      }
      printf("%d ",lineCount);
-     printf("%d ",wordCount+1);
+     printf("%d ",wordCount);
      printf("%d ",characterCount);
      printf("%s\n",argv[1]);
 }
@@ -77,7 +77,7 @@ else if(argc == 3)
      }
      }
      printf("%d ",lineCount);
-     printf("%d ",wordCount+1);
+     printf("%d ",wordCount);
      printf("%s\n", argv[2]);
      }
     else
@@ -107,19 +107,34 @@ else if(argc == 3)
      }
      }
      printf("%d ",characterCount);
-     printf("%d ",wordCount+1);
+     printf("%d ",wordCount);
      printf("%s\n",argv[2]);
     }
 }
 else if(argc ==1) //no arguments after ./new_cat
 {
-    char content[256];
-    printf("type in text to cat\n hit Ctrl+D when you are done\n");
-    while(fgets(content,256, stdin))
-    {
-      printf("%s",content); //print whatever was input
-    }
+     char * content[MAX_CHAR]; //for storing content
+     int characterCount = 0;
+     int wordCount = 0;
+     int lineCount = 0;
+     char ch;
+     while((scanf ("%c", &ch))!=EOF)
+     {
+     characterCount++;
+     if(ch == ' ')
+     {
+       wordCount++;      
+     }
+     if(ch == '\n')
+     {
+        wordCount++;
+        lineCount++;
+     }
+     }
+     printf("%d ",lineCount);
+     printf("%d ",wordCount);
+     printf("%d\n",characterCount);
+ 
 }
 return 0;
 }
-
