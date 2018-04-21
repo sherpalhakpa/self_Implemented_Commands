@@ -23,10 +23,10 @@ else if (argc>1)
      }
      printf("\n");//looks better
 }
-//something weird happened
+//wierd format 
 else
 {
-     fprintf(stderr,"Error Occured!\n");
+     fprintf(stderr,"Allowed format is ./new_echo [arg]...[arg]\n");
      exit(0);
 
 }
