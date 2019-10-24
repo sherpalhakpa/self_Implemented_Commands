@@ -1,6 +1,4 @@
-# osp_lab2_sherpal
-# prof Aaron Dingler
-# OS programming, Spring 2018
+# My Own linux Commands
 # Implemented by Lhakpa Sherpa
 
 This Program implements some popular linux programs(listed) with some modification.
